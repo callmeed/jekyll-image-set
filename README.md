@@ -53,7 +53,7 @@ sets the class for container_tag, default is 'image-set'
 Known Issues
 ----------------
 
-* Cannot add multiple clasess to img tags or wrap/container tags
+* Cannot add multiple clasess to img tags or wrap/container tags.
 * No way to set ALT or other attributes for img tags. Need this for SEO probably. 
-* Tabs/indentation is crappy 
+* Tabs/indentation is crappy.
 
