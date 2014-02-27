@@ -8,6 +8,11 @@ Takes a dir (generally a subdirectory of your images folder), gets all the image
 
 Useful for creating an image gallery and the like.
 
+Installation
+----------------
+
+Place the image_set.rb file in the _plugins directory of your Jekyll site
+
 Usage 
 ----------------
 
@@ -26,17 +31,25 @@ Usage
 Options
 ----------------
 
---class=some_class 
+<code>--class=some_class</code>
 sets the class for the <img> tags, default is 'image'
 
---wrap_tag=some_tag
+<code>--wrap_tag=some_tag</code>
 sets the tag to wrap around each <img>, default is 'li'
---wrap_class=some_class
+
+<code>--wrap_class=some_class</code>
 sets the class for wrap_tag, default is 'image-item'
 
---container_tag=some_tag
+<code>--container_tag=some_tag</code>
 sets the tag to contain all <img>s, default is 'ul'
 
---container_class=some_class
+<code>--container_class=some_class</code>
 sets the class for container_tag, default is 'image-set'
+
+Known Issues
+----------------
+
+* Cannot add multiple clasess to <img> tags or wrap/container tags
+* No way to set ALT or other attributes for <img> tags. Need this for SEO probably. 
+* Tabs/indentation is crappy 
 
