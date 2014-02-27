@@ -28,6 +28,10 @@ Usage
 
 (this will set the class for the img tags and use div's for the container and wrap)
 
+What About the GIFs!?
+----------------
+Right now, it will match any .jpg or .png file in the path you specify. If you need to match other file types, edit the full_path var in the render method. 
+
 Available Options
 ----------------
 
