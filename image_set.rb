@@ -67,7 +67,7 @@ module Jekyll
       # Include a filter for JPG and PNG images
       full_path = File.join(context.registers[:site].config['source'], @path, "*.{jpg,jpeg,JPG,JPEG,png,PNG}")
       # Start building tags
-      source = "<#{@container_tag} class'#{@container_class}'>\n"
+      source = "<#{@container_tag} class='#{@container_class}'>\n"
       # Glob the path and create tags for all images
       Dir.glob(full_path).each do |image|
         file = Pathname.new(image).basename
