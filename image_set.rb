@@ -69,7 +69,7 @@ module Jekyll
       # Start building tags
       source = "<#{@container_tag} class='#{@container_class}'>\n"
       # Glob the path and create tags for all images
-      Dir.glob(full_path).each do |image|
+      Dir.glob(full_path).uniq.each do |image|
         file = Pathname.new(image).basename
         src = File.join('/', @path, file)
         source += "<#{@wrap_tag} class='#{@wrap_class}'>\n"
