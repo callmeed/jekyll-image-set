@@ -1,17 +1,17 @@
 # ImageSet Liquid Plugin
 # by Erik Dungan
 # erik.dungan@gmail.com / @callmeed
-# 
+#
 # Takes a dir, gets all the images from it, and creates HTML image and container tags
-# Useful for creating an image gallery and the like 
-# 
+# Useful for creating an image gallery and the like
+#
 # USAGE
 # default: {% image_set images/gallery1 %}
 # (this will create a UL, then LI and IMG tags for each image in images/gallery1)
-# 
+#
 # with options: {% image_set images/gallery2 --class=img-responsive --container-tag=div --wrap-tag=div %}
 # (this will set the class for the <img> tags and use <div>s for the container and wrap)
-# 
+#
 # OPTIONS
 # --class=some_class (sets the class for the <img> tags, default is 'image')
 # --wrap_tag=some_tag (sets the tag to wrap around each <img>, default is 'li')
@@ -68,15 +68,17 @@ module Jekyll
       full_path = File.join(context.registers[:site].config['source'], @path, "*.{jpg,jpeg,JPG,JPEG,png,PNG}")
       # Start building tags
       source = "<#{@container_tag} class='#{@container_class}'>\n"
-      # Glob the path and create tags for all images
-      Dir.glob(full_path).each do |image|
+      # Glob the path and sort it
+      files = Dir.glob(full_path).uniq.sort
+      # Now create tags for all images
+      files.glob(full_path).each do |image|
         file = Pathname.new(image).basename
         src = File.join('/', @path, file)
         source += "<#{@wrap_tag} class='#{@wrap_class}'>\n"
         source += "<img src='#{src}' class='#{@class}'>\n"
         source += "</#{@wrap_tag}>\n"
       end
-      # Close it up 
+      # Close it up
       source += "</#{@container_tag}>\n"
       source
     end
