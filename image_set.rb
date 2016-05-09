@@ -71,7 +71,7 @@ module Jekyll
       # Glob the path and sort it
       files = Dir.glob(full_path).uniq.sort
       # Now create tags for all images
-      files.glob(full_path).each do |image|
+      files.each do |image|
         file = Pathname.new(image).basename
         src = File.join('/', @path, file)
         source += "<#{@wrap_tag} class='#{@wrap_class}'>\n"
